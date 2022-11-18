@@ -20,8 +20,10 @@ python setup.py
 # Simplest option of all
 gunicorn main:app
 ````
-Syntax: gunicorn <filename>:<application_name>
-
+Syntax: gunicorn <file>:<application_name>
+- filename without extensions
+- application name / the main instance in main 
+  (*app - by default*)
 or 
 
 ````bash
