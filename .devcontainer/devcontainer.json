@@ -3,11 +3,8 @@
   "features": {
     "ghcr.io/devcontainers/features/python:1": {},
       "ghcr.io/devcontainers/features/github-cli:1": {},
-        "ghcr.io/devcontainers/features/sshd:1": {},
-          "ghcr.io/devcontainers/features/nvidia-cuda:1": {},
             "ghcr.io/devcontainers/features/common-utils:1": {},
               "ghcr.io/devcontainers/features/desktop-lite:1": {},
-                "ghcr.io/dhoeric/features/tfsec:1": {},
-                  "ghcr.io/devcontainers-contrib/features/mitmproxy:1": {}
+                "ghcr.io/dhoeric/features/tfsec:1": {}
   }
 }
