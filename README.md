@@ -44,7 +44,7 @@ python3 start.py
 ````
 
 - filename without extensions
-- server runs on <a href="http://127.0.0.1:8000/" target="_blank">Server</a>
+- server runs on http://127.0.0.1:8000/
 
 ## Deploying the Server
 
