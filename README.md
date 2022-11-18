@@ -23,6 +23,7 @@ gunicorn main:app
 or 
 
 ````bash
+# If you can't run gunicorn by itself
 python3 -m gunicorn main:app
 ````
 
