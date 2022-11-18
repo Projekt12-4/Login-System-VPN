@@ -37,7 +37,7 @@ def create_app():
 
 # The new versions of flask require an app context without the "app=<app>"-create_all function parameter
 def create_database(app):
-    if not path.exists('/website/instance/' + DB_NAME): # originally website/DB_NAME
+    if not path.exists(f'/website/instance/{DB_NAME}'): # originally website/DB_NAME
 
         print("---------------------------------\n[INFO-SERVER-STATUS]\nServer has been started\n---------------------------------")
         with app.app_context():
