@@ -19,6 +19,11 @@ pip install -r requirements.txt
 ````bash
 gunicorn main:app
 ````
+or 
+
+````bash
+python3 -m gunicorn main:app
+````
 
 Syntax: gunicorn <filename>:<application_name>
 - filename without extensions

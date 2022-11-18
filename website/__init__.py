@@ -2,14 +2,17 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from os import path
 from flask_login import LoginManager
+import os
 
+# the secret key stems from the codespace secret for this repo
+db_secret_key = os.environ.get(DB_SECRET_KEY);
 db = SQLAlchemy()
 DB_NAME = "database.db"
 
-# verändere den secret key zu irgendwas interessanteres
+# secret key is then passed to the following function in an f-string manner 
 def create_app():
     app = Flask(__name__)
-    app.config['SECRET_KEY'] = 'hjshjhdjah kjshkjdhjs'
+    app.config['SECRET_KEY'] = f'{db_secret_key}'
     app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DB_NAME}'
     db.init_app(app)
 
