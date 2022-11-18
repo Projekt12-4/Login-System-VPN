@@ -23,7 +23,7 @@ gunicorn main:app
 Syntax: gunicorn <file>:<application_name>
 - filename without extensions
 - application name / the main instance in main 
-  (*app - by default*)
+  (*app - by default*)\\
 or 
 
 ````bash
