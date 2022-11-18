@@ -4,7 +4,9 @@
 
 Make sure you have the latest version of Python installed.
 
-Note: Only has been tested under Linux!
+Note: This repo has only been tested under Linux!
+---
+
 Clone repo to server
 ```bash
 git clone <repo-url>
