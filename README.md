@@ -17,6 +17,7 @@ python setup.py
 # Starting The App
 
 ````bash
+# Simplest option of all
 gunicorn main:app
 ````
 
