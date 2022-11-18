@@ -4,7 +4,7 @@
 
 Make sure you have the latest version of Python installed.
 
-<span style="color:red">**Note: This repo has only been tested under Linux!**</span>
+<span>**Note: This repo has only been tested under Linux!**</span>
 
 
 Clone repo to server
