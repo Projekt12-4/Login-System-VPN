@@ -20,6 +20,7 @@ python setup.py
 # Simplest option of all
 gunicorn main:app
 ````
+Syntax: gunicorn <filename>:<application_name>
 
 or 
 
@@ -36,7 +37,6 @@ python3 start.py
 
 ````
 
-Syntax: gunicorn <filename>:<application_name>
 - filename without extensions
 - server runs on <a href="http://127.0.0.1:8000/" target="_blank">Server</a>
 
