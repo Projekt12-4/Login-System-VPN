@@ -19,10 +19,17 @@ pip install -r requirements.txt
 ````bash
 gunicorn main:app
 ````
+
 or 
 
 ````bash
 python3 -m gunicorn main:app
+````
+
+or 
+
+````bash
+python3 start.py
 ````
 
 Syntax: gunicorn <filename>:<application_name>

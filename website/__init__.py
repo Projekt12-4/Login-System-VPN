@@ -4,12 +4,10 @@ from os import path
 from flask_login import LoginManager
 import os
 
-# the secret key stems from the codespace secret for this repo
-db_secret_key = os.environ.get(DB_SECRET_KEY);
+db_secret_key = os.environ.get("DB_SECRET_KEY");
 db = SQLAlchemy()
 DB_NAME = "database.db"
 
-# secret key is then passed to the following function in an f-string manner 
 def create_app():
     app = Flask(__name__)
     app.config['SECRET_KEY'] = f'{db_secret_key}'
@@ -41,7 +39,7 @@ def create_app():
 def create_database(app):
     if not path.exists('/website/instance/' + DB_NAME): # originally website/DB_NAME
 
-        print('Server/Database started!')
+        print("---------------------------------\n[INFO-SERVER-STATUS]\nServer has been started\n---------------------------------")
         with app.app_context():
             db.create_all()
     
