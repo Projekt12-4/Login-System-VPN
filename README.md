@@ -9,9 +9,9 @@ Clone repo to server
 git clone <repo-url>
 ```
 
-Installing the required modules for python
+Quick Setup
 ```bash
-pip install -r requirements.txt
+python setup.py
 ```
 
 # Starting The App
