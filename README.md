@@ -29,7 +29,9 @@ python3 -m gunicorn main:app
 or 
 
 ````bash
+# This script also checks if the environment variables are set
 python3 start.py
+
 ````
 
 Syntax: gunicorn <filename>:<application_name>

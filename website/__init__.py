@@ -35,7 +35,7 @@ def create_app():
     return app
 
 
-# Bei den der neuen version von alchemy benötigt der user einen app context anstelle von db.create_all(app=app)
+# The new versions of flask require an app context without the "app=<app>"-create_all function parameter
 def create_database(app):
     if not path.exists('/website/instance/' + DB_NAME): # originally website/DB_NAME
 

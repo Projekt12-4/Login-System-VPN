@@ -7,12 +7,13 @@ def start():
 
         
     if start_command_env and db_secret_key_env is None:
-        print(f"---------------------------------\n[WARN-NO_ENV_VAR]\nSTART:{start_command_env}\nDB_SECRET_KEY{db_secret_key_env}\nNo environment variables detected!\n---------------------------------")            
+        print(f"---------------------------------\n[WARN-NO_ENV_VAR]\n$START_SERVER_SHELL: {start_command_env}\n$DB_SECRET_KEY {db_secret_key_env}\nNo environment variables detected!\n---------------------------------")            
         exit(0)
 
     else:
-        print(f"---------------------------------\n[INFO-ENV_VAR]\nEnvironment-Variable-Check passed\n---------------------------------")
+        print(f"---------------------------------\n[INFO-ENV_VAR]\n$START_SERVER_SHELL: {start_command_env}\n$DB_SECRET_KEY: {db_secret_key_env}\n---------------------------------")
         os.system(start_command_env)
+
 
 
 if __name__ == "__main__":
