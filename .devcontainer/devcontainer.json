@@ -1,9 +1,23 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/python
 {
-  "image": "mcr.microsoft.com/devcontainers/universal:2",
-  "features": {
-    "ghcr.io/devcontainers/features/python:1": {},
-      "ghcr.io/devcontainers/features/github-cli:1": {},
-            "ghcr.io/devcontainers/features/common-utils:1": {},
-                "ghcr.io/dhoeric/features/tfsec:1": {}
-  }
+  "forwardPorts": [8000,8000],
+	"name": "Python 3",
+	"image": "https://mcr.microsoft.com/devcontainers/python:3.8.10",
+	"features": {
+    "ghcr.io/devcontainers/features/common-utils:1": {}
+    
+    
+	},
+  "extensions": [],
+  
+  
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+  
+	// Use 'postCreateCommand' to run commands after the container is created.
+  "postCreateCommand": "pip3 install --user -r requirements.txt && ",
+
+	// Configure tool-specific properties.
+	// "customizations": {},
+
 }
