@@ -1,7 +1,7 @@
 import os 
 
 def start():
-
+    
     start_command_env = os.environ.get("START_SERVER_SHELL") 
     db_secret_key_env = os.environ.get("DB_SECRET_KEY")
 

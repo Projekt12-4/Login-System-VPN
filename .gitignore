@@ -2,3 +2,4 @@
 website/__pycache__
 instance/database.db
 __pycache__
+*/*.db
