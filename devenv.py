@@ -40,9 +40,18 @@ class DevEnvSetup():
         time.sleep(2)
         print(f"Executing:\n{pub}")
         os.system(pub)
+    
+    # To pull attributes like containerName ...
+    def __getattribute__(self: object, __name: any) -> any:
+        return object.__getattribute__(self, __name)
 
 def main():
-    env = DevEnvSetup(containerName="ec6775bf5935", user_email="oleg.ionov@tutanota.de", user_name="xqly-stack", ssh_key_priv="id_ed25519") 
+    name: str = input("Container-Name [Docker]:\t")
+    email: str = input("Email [GitHub]:\t")
+    uname: str = input("Username [GitHub]:\t")
+    sshkeypriv: str = input("SSH-Key [Name | NoDir!]:\t")
+
+    env = DevEnvSetup(containerName=name, user_email=email, user_name=uname, ssh_key_priv=sshkeypriv) 
     #containerName=, user_email=, user_name=, ssh_key_priv=
     env.gitConfig()
     env.keyConfig()
