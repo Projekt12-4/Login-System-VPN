@@ -18,5 +18,5 @@ Note: The user is specified in the
 ## change the permission of private key so that you can do git operations
 docker exec eloquent_ritchie chmod 600 /root/.ssh/id_ed25519
 
-test
+anothertest
 
