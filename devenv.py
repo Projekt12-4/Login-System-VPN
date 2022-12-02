@@ -46,7 +46,7 @@ class DevEnvSetup():
         return object.__getattribute__(self, __name)
 
 def main():
-    name: str = input("Container-Name [Docker]:\t")
+    name: str = input("Container-ID [Docker]:\t")
     email: str = input("Email [GitHub]:\t")
     uname: str = input("Username [GitHub]:\t")
     sshkeypriv: str = input("SSH-Key [Name | NoDir!]:\t")
