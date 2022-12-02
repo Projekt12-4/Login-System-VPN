@@ -1,0 +1,10 @@
+version: '3.4'
+
+services:
+  loginsystemvpn:
+    image: loginsystemvpn
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    ports:
+      - 8000:8000
