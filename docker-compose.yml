@@ -5,6 +5,6 @@ services:
     container_name: loginsys
     build:
       context: .
-      dockerfile: ./Dockerfile
+      dockerfile: Dockerfile
     ports:
       - 8000:8000
