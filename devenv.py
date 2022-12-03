@@ -51,8 +51,9 @@ def main():
     email: str = input("Email [GitHub]:\t")
     uname: str = input("Username [GitHub]:\t")
     sshkeypriv: str = input("SSH-Key [Name | NoDir!]:\t")
+    contuser: str = input("User inside the Container:\t")
 
-    env = DevEnvSetup(containerName=name, user_email=email, user_name=uname, ssh_key_priv=sshkeypriv) 
+    env = DevEnvSetup(cont_user=contuser, containerName=name, user_email=email, user_name=uname, ssh_key_priv=sshkeypriv) 
     #containerName=, user_email=, user_name=, ssh_key_priv=
     env.gitConfig()
     env.keyConfig()
