@@ -2,7 +2,7 @@ import os
 from dataclasses import dataclass, field
 import time
 
-@dataclass(kw_only=True)
+@dataclass()
 class DevEnvSetup():
 
     containerName: str
@@ -11,6 +11,7 @@ class DevEnvSetup():
     dir_prefix: str = field(init=False)
     ssh_key_priv: str
     ssh_key_pub: str = field(init=False)  
+    cont_user: str 
 
     def __post_init__(self: object) -> None:
         # Assuming the keys have the same name and are in the same directory
@@ -32,8 +33,8 @@ class DevEnvSetup():
     def keyConfig(self: object) -> None:
         # Inserting the keys into the devcontainer (WARNING: containername has a cryptic, weird value)
         # user for the container is appuser as defined in the dockerfile
-        priv: str = f'docker cp {self.ssh_key_priv} {self.containerName}:/home/appuser/.ssh/'
-        pub: str = f'docker cp {self.ssh_key_pub} {self.containerName}:/home/appuser/.ssh/'
+        priv: str = f'docker cp {self.ssh_key_priv} {self.containerName}:/home/{self.cont_user}/.ssh/'
+        pub: str = f'docker cp {self.ssh_key_pub} {self.containerName}:/home/{self.cont_user}/.ssh/'
         # Execute
         print(f"Executing:\n{priv}")
         os.system(priv)
