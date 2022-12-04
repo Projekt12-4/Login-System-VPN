@@ -5,21 +5,21 @@
 <span>**Note: This repo has only been tested under Linux!**</span>
 
 
-1. Clone this repository to your Development environment assuming you have git already installed (clone using your ssh-keys)\
+1. Clone this repository to your Development environment assuming you have git already installed (clone using your ssh-keys) &nbsp;
 ```bash
 git clone <repo-url>
 ```
-2. Install Docker Desktop under Windows 10 (with WSL Extension/Integration!!)\
-3. Install VSCode on Windows 10 \
-4. Start VSCode under Linux (assuming you're in the root dir of your git repo)\
+2. Install Docker Desktop under Windows 10 (with WSL Extension/Integration!!) &nbsp;
+3. Install VSCode on Windows 10 &nbsp;
+4. Start VSCode under Linux (assuming you're in the root dir of your git repo) &nbsp;
 ```bash
 code .
 ```
 ... this will open Visual Studio Code from Windows (even though it was called out of a WSL2-Instance)
-the main difference: your VSCode will connect to your WSL2-Linux Machine\\
-5. Press CTRL + SHIFT + P - and select reopen in container (uses the devcontainer.json config)\\
-6. Wait for it to setup everything you need (the postCreateCommand will install all requirements that youneed to use the application correctly)\\
-7. Start your project using the instructions below  
+the main difference: your VSCode will connect to your WSL2-Linux Machine &nbsp;
+5. Press CTRL + SHIFT + P - and select reopen in container (uses the devcontainer.json config) &nbsp;
+6. Wait for it to setup everything you need (the postCreateCommand will install all requirements that youneed to use the application correctly) &nbsp;
+7. Start your project using the instructions below  &nbsp;
 
 # Starting The App
 
