@@ -1,7 +1,7 @@
 import os
 from dataclasses import dataclass, field
 import time
-
+# This application pushes git credentials and keys into a vscod devcontainer, since its cumbersome to do it the converntional dockerfile way
 @dataclass()
 class DevEnvSetup():
 
