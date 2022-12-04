@@ -5,14 +5,13 @@
 <span>**Note: This repo has only been tested under Linux!**</span>
 
 
-1. Clone this repository to your Development environment assuming you have git already installed (clone using your ssh-keys)
+1. Clone this repository to your Development environment assuming you have git already installed (clone using your ssh-keys)\
 ```bash
 git clone <repo-url>
 ```
-\\
-2. Install Docker Desktop under Windows 10 (with WSL Extension/Integration!!)\\
-3. Install VSCode on Windows 10 \\
-4. Start VSCode under Linux (assuming you're in the root dir of your git repo)\\
+2. Install Docker Desktop under Windows 10 (with WSL Extension/Integration!!)\
+3. Install VSCode on Windows 10 \
+4. Start VSCode under Linux (assuming you're in the root dir of your git repo)\
 ```bash
 code .
 ```
