@@ -17,8 +17,11 @@ code .
 ```
 ... this will open Visual Studio Code from Windows (even though it was called out of a WSL2-Instance)
 the main difference: your VSCode will connect to your WSL2-Linux Machine &nbsp;
+
 5. Press CTRL + SHIFT + P - and select reopen in container (uses the devcontainer.json config) &nbsp;
+
 6. Wait for it to setup everything you need (the postCreateCommand will install all requirements that youneed to use the application correctly) &nbsp;
+
 7. Start your project using the instructions below  &nbsp;
 
 # Starting The App
