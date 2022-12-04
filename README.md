@@ -2,20 +2,24 @@
 
 ## Setup & Installation
 
-Make sure you have the latest version of Python installed.
-
 <span>**Note: This repo has only been tested under Linux!**</span>
 
 
-Clone repo to server
+1. Clone this repository to your Development environment assuming you have git already installed (clone using your ssh-keys)
 ```bash
 git clone <repo-url>
 ```
-
-Quick Setup
+2. Install Docker Desktop under Windows 10 (with WSL Extension/Integration!!)
+3. Install VSCode on Windows 10
+4. Start VSCode under Linux (assuming you're in the root dir of your git repo)
 ```bash
-python setup.py
+code .
 ```
+... this will open Visual Studio Code from Windows (even though it was called out of a WSL2-Instance)
+the main difference: your VSCode will connect to your WSL2-Linux Machine
+5. Press CTRL + SHIFT + P - and select reopen in container (uses the devcontainer.json config)
+6. Wait for it to setup everything you need (the postCreateCommand will install all requirements that youneed to use the application correctly)
+7. Start your project using the instructions below  
 
 # Starting The App
 

@@ -54,7 +54,7 @@ def main():
     contuser: str = input("User inside the Container:\t")
 
     env = DevEnvSetup(cont_user=contuser, containerName=name, user_email=email, user_name=uname, ssh_key_priv=sshkeypriv) 
-    #containerName=, user_email=, user_name=, ssh_key_priv=
+
     env.gitConfig()
     env.keyConfig()
     
