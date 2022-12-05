@@ -1,9 +1,11 @@
+import uuid
 from flask import Blueprint, render_template, request, flash, redirect, url_for
 from .models import User
 from werkzeug.security import generate_password_hash, check_password_hash
 from . import db
 from flask_login import login_user, login_required, logout_user, current_user
 import bleach
+import random
 
 auth = Blueprint('auth', __name__)
 
@@ -34,19 +36,20 @@ def login():
 
 @auth.route('/logout')
 @login_required
-def logout():
+def logout() -> redirect:
     logout_user()
     return redirect(url_for('auth.login'))
 
 
 @auth.route('/sign-up', methods=['GET', 'POST'])
-def sign_up():
+def sign_up() -> render_template    :
     if request.method == 'POST':
-        email = request.form.get('email')
-        first_name = request.form.get('firstName')
-        password1 = request.form.get('password1')
-        password2 = request.form.get('password2')
-
+        email: str = request.form.get('email')
+        first_name: str = request.form.get('firstName')
+        password1: str = request.form.get('password1')
+        password2: str = request.form.get('password2')
+        u_uid: str = uuid.uuid5(namespace=uuid.NAMESPACE_OID, name="AUTH")
+        u_uid = str(u_uid)
         # Cleaning user input on sign-up
         email = bleach.clean(email)
         first_name = bleach.clean(first_name)
@@ -66,7 +69,7 @@ def sign_up():
             flash('Password must be at least 7 characters.', category='error')
         else:
             new_user = User(email=email, first_name=first_name, password=generate_password_hash(
-            password1, method='sha256'))
+            password1, method='sha256'), key_file=u_uid)
             db.session.add(new_user)
             db.session.commit()
             login_user(new_user, remember=True)

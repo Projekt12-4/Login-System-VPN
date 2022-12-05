@@ -11,7 +11,7 @@ views = Blueprint('views', __name__)
 # Should show the downloadable content, change jinja template to show the downloadable file from slqite template
 @views.route('/', methods=['GET', 'POST'])
 @login_required
-def home():
+def home() -> render_template: 
     if request.method == 'GET':
         #blobs = db.session.query(User.key_file).order_by(User.id).all()
         filename = "requirements.txt"

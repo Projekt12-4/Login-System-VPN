@@ -1,9 +1,18 @@
 {% extends "base.html" %} {% block title %}Dashboard{% endblock %} 
 {% block content %}
-<h1 align="center">Hello, {{user.first_name | e}}!</h1>
 <pre>
   <code>
-    {{blob}}
+    <p>uuid:</p>
+    {{user.key_file | e}}<br>
+    <p>id:</p>
+    {{user.id | e}}<br>
+    <p>first_name:</p>
+    {{user.first_name | e}}<br>
+    <p>email:</p>
+    {{user.email | e}}
+    <!-- <p>sha256 hash (+ salt):</p>
+    {{user.password}} -->
   </code>
+
 </pre>
 {% endblock %}
