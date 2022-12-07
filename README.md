@@ -42,14 +42,6 @@ or
 python3 -m gunicorn main:app
 ````
 
-or 
-
-````bash
-# This script also checks if the environment variables are set
-python3 start.py
-
-````
-
 - filename without extensions
 - server runs on http://127.0.0.1:8000/
 
