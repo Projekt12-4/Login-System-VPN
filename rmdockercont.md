@@ -15,6 +15,5 @@ docker cp $HOME/.ssh/id_ed25519 6b9d18c3de7f:/home/appuser/.ssh/
 docker cp $HOME/.ssh/id_ed25519.pub 6b9d18c3de7f:/home/appuser/.ssh/
 Note: The user is specified in the IDE e.g. vscode 
  
-## change the permission of private key so that you can do git operations
 
 
