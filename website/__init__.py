@@ -4,7 +4,7 @@ from os import path
 from flask_login import LoginManager
 import os
 
-db_secret_key = os.environ.get("DB_SECRET_KEY");
+db_secret_key = os.environ.get("DB_SECRET_KEY")
 db = SQLAlchemy()
 DB_NAME = "database.db"
 
