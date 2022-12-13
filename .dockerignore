@@ -4,6 +4,7 @@
 **/.dockerignore
 **/.env
 **/.git
+*.db
 **/.gitignore
 **/.project
 **/.settings

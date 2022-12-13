@@ -1,15 +1,15 @@
 from . import db
+from dataclasses import dataclass
 from flask_login import UserMixin
 from sqlalchemy.sql import func
-import os
 
-# Requires key file
 
+@dataclass
 class User(db.Model, UserMixin):
-    id = db.Column(db.Integer, primary_key=True)
-    email = db.Column(db.String(150), unique=True)
-    password = db.Column(db.String(150))
-    first_name = db.Column(db.String(150))
-    key_file = db.Column(db.BLOB()) 
+    id: int = db.Column(db.Integer, primary_key=True)
+    uid: str = db.Column(db.String(500), unique=True)
+    first_name: str = db.Column(db.String(150))
+    email: str = db.Column(db.String(150))
+    password: str = db.Column(db.String(150))
 
 

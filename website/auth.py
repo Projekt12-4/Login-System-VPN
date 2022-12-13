@@ -1,3 +1,4 @@
+from uuid_extensions import uuid7str
 from flask import Blueprint, render_template, request, flash, redirect, url_for
 from passlib.hash import argon2
 from flask_login import login_user, login_required, logout_user, current_user
@@ -16,11 +17,13 @@ def login():
 
         # Cleaning user input
         email = bleach.clean(email)
+        email = email.lower()
         password = bleach.clean(password)
 
         user = User.query.filter_by(email=email).first()
         if user:
-            if argon2.verify(user.password, password):
+            pass_verify: bool = argon2.verify(password, user.password)
+            if pass_verify:
                 flash('Logged in successfully!', category='success')
                 login_user(user, remember=True)
                 return redirect(url_for('views.home'))
@@ -49,6 +52,7 @@ def sign_up():
 
         # Cleaning user input on sign-up
         email = bleach.clean(email)
+        email = email.lower()
         first_name = bleach.clean(first_name)
         password1 = bleach.clean(password1)
         password2 = bleach.clean(password2)
@@ -65,7 +69,17 @@ def sign_up():
         elif len(password1) < 7:
             flash('Password must be at least 7 characters.', category='error')
         else:
-            new_user = User(email=email, first_name=first_name, password=argon2.hash(password1))
+            # Vars for the database
+            userid: str = uuid7str()
+            hash_pass: str = str(argon2.hash(password1))
+
+            new_user = User(
+                uid = userid, 
+                email=email, 
+                first_name=first_name, 
+                password=hash_pass # new hashing function (argon2)
+            )
+
             db.session.add(new_user)
             db.session.commit()
             login_user(new_user, remember=True)
@@ -73,3 +87,6 @@ def sign_up():
             return redirect(url_for('views.home'))
 
     return render_template("sign_up.html", user=current_user)
+
+
+

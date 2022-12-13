@@ -1,9 +1,13 @@
-{% extends "base.html" %} {% block title %}Dashboard{% endblock %} 
+{% extends "base.html" %} {% block title %}User Panel: {{user.first_name | e}}{% endblock %} 
 {% block content %}
 <h1 align="center">Hello, {{user.first_name | e}}!</h1>
 <pre>
   <code>
-    {{blob}}
+    <p>Index: </p>{{user.id | e}}
+    <p>User_ID: </p>{{user.uid | e}}
+    <p>First_Name: </p>{{user.first_name | e}}
+    <p>Email: </p>{{user.email | e}}
+    <p>Hash: </p>{{user.password | e}}
   </code>
 </pre>
 {% endblock %}
