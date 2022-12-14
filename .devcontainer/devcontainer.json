@@ -2,11 +2,10 @@
 // README at: https://github.com/devcontainers/templates/tree/main/src/python
 {
 	"name": "Python 3",
-	"build": { "dockerfile": "/home/xqly/Downloads/dev/Login-System-VPN/Dockerfile" },	
+	"image": "mcr.microsoft.com/devcontainers/python:0-3.8",
 	"features": {
-		"ghcr.io/devcontainers/features/common-utils:1": {},
-		"ghcr.io/devcontainers/features/git:1": {}
-	},
+		"ghcr.io/guiyomh/features/vim:0": {}
+	}
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {},
@@ -15,7 +14,7 @@
 	// "forwardPorts": [],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "python -m pip install -r requirements.txt"
+	// "postCreateCommand": "pip3 install --user -r requirements.txt",
 
 	// Configure tool-specific properties.
 	// "customizations": {},
