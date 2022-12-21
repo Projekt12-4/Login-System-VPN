@@ -26,7 +26,6 @@ Flask-Login==0.6.2
 Flask-SQLAlchemy==3.0.2
 fonttools==4.38.0
 gitdb==4.0.10
-GitPython==3.1.29
 greenlet==2.0.1
 gunicorn==20.1.0
 idna==3.4
