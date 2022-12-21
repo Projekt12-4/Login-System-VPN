@@ -1,7 +1,7 @@
 import os
 from dataclasses import dataclass, field
 import time
-# This application pushes git credentials and keys into a vscod devcontainer, since its cumbersome to do it the converntional dockerfile way
+# This application pushes git credentials and keys into a vscode devcontainer, as its cumbersome to do it the conventional dockerfile way
 @dataclass()
 class DevEnvSetup():
 
@@ -32,7 +32,6 @@ class DevEnvSetup():
     
     def keyConfig(self: object) -> None:
         # Inserting the keys into the devcontainer (WARNING: containername has a cryptic, weird value)
-        # user for the container is appuser as defined in the dockerfile
         priv: str = f'docker cp {self.ssh_key_priv} {self.containerName}:/home/{self.cont_user}/.ssh/'
         pub: str = f'docker cp {self.ssh_key_pub} {self.containerName}:/home/{self.cont_user}/.ssh/'
         # Execute
