@@ -18,9 +18,9 @@ code .
 ... this will open Visual Studio Code from Windows (even though it was called out of a WSL2-Instance)
 the main difference: your VSCode will connect to your WSL2-Linux Machine &nbsp;
 
-5. Press CTRL + SHIFT + P - and select reopen in container (uses the devcontainer.json config) &nbsp;
+5. Press CTRL + SHIFT + P - and select reopen in container (uses the devcontainer.json config) (assuming you've installed the RemoteContainerExtension) &nbsp;
 
-6. Wait for it to setup everything you need (the postCreateCommand will install all requirements that youneed to use the application correctly) &nbsp;
+6. Wait for it to setup everything you need (the postCreateCommand will install all dependencies that come with the project) &nbsp;
 
 7. Start your project using the instructions below  &nbsp;
 
@@ -38,16 +38,17 @@ Syntax: gunicorn <file>:<application_name>
 or 
 
 ````bash
-# If you can't run gunicorn by itself
+# If you can't run gunicorn as a standalone application
 python3 -m gunicorn main:app
 ````
 
-- filename without extensions
+- syntax asforementioned
 - server runs on http://127.0.0.1:8000/
 
-## Deploying the Server
+## Setting up a reverse proxy
 
-Forward all traffic from nginx to gunicorn.
+### NGINX Reverse Proxy Configuration
+Forwards all traffic from nginx to gunicorn.
 Nginx will act as a reverse proxy
 
 ````bash
@@ -63,4 +64,35 @@ Nginx will act as a reverse proxy
     }
   }
 ````
+More information can be found here:
 
+- https://hub.docker.com/_/nginx
+- https://gunicorn.org/#deployment
+
+## Deploying the application using Docker
+
+- https://hub.docker.com/r/xqly/login-system
+
+Pull image from the official docker registry
+````bash
+docker pull xqly/login-system:latest
+````
+Start the image
+````bash
+docker run login-system
+````
+the name can be replaced with the **image-id**
+... the same can be achieved on a GUI-Level using [Portainer][1].
+
+Since the app doesn't rely on a persistent data storage *(not yet)* and due to security precautions, it is strongly advised to deploy the application as a temporary container that removes itself after being stopped.
+
+
+
+
+
+
+
+
+
+
+[1]: https://www.portainer.io/
