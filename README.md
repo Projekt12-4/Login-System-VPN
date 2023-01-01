@@ -22,7 +22,7 @@ the main difference: your VSCode will connect to your WSL2-Linux Machine &nbsp;
 
 6. Wait for it to setup everything you need (the postCreateCommand will install all dependencies that come with the project) &nbsp;
 
-7. Move your ssh-keys that associated with your GitHub Account to your Docker Devcontainer
+7. Move your ssh-keys that are associated with your GitHub Account to your Docker Devcontainer
 ````bash
 curl https://gist.githubusercontent.com/xqly-stack/12dc2dcc9dd7fda47fb8d7ae4c38c122/raw/f67fa47f243ecc40c48b035cd6c3e633c2d219a3/devenv.py \
 -o devenv.py\
