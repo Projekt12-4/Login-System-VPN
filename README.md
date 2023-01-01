@@ -84,7 +84,7 @@ docker run login-system
 the name can be replaced with the **image-id**
 ... the same can be achieved on a GUI-Level using [Portainer][1].
 
-Since the app doesn't rely on a persistent data storage *(not yet)* and due to security precautions, it is strongly advised to deploy the application as a temporary container that removes itself after being stopped.
+Since the app doesn't rely on a persistent data storage and due to security precautions, it is strongly advised to deploy the application as a temporary container that removes itself after being stopped. **(This is only a web service)**
 
 
 
