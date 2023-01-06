@@ -1,5 +1,5 @@
 # For more information, please refer to https://aka.ms/vscode-docker-python
-FROM python:3.8-stretch
+FROM python:3.9
 
 EXPOSE 8000
 
